@@ -1,14 +1,4 @@
-//Load function on pade load.
-window.onload = function(){  
-
-//Call 'rule-button' function when clicked.
-document.getElementById("rule-button").onclick = function() {
-	ruleButtonClicked()
-};
-
-//function called when 'awardButtonClicked' is clicked.
-function ruleButtonClicked() {
-/*List of rules*/
+//List of rules
 	var rules = [
 	{
 		icon: 'images/tempCard.png',
@@ -22,6 +12,38 @@ function ruleButtonClicked() {
 	},
 	];
 
+
+function addRule() {
+	var randomRule = [Math.floor(Math.random() * rules.length)];
+	var selectedRule = rules[randomRule];
+
+	var node = document.createElement("p");
+
+	/*var ruleNodeText = document.createTextNode(selectedRule.name);
+	var ruleNodeDisc = document.createTextNode(selectedRule.discription);*/
+
+	var ruleNodeIcon = document.createTextNode(innerHTML = '<img src="'+selectedRule.icon+'" style="height: 100px;"">');
+	var ruleNodeName = document.createTextNode(selectedRule.name);
+	var ruleNodeDisc = document.createTextNode(selectedRule.discription);
+
+	node.appendChild(ruleNodeIcon);
+	node.appendChild(ruleNodeName);
+	node.appendChild(ruleNodeDisc);
+
+	document.getElementById("rules").appendChild(node);
+};
+
+function checkCounter() { 
+if (counter > 3) {}
+
+};
+
+
+
+/*
+//function called when 'awardButtonClicked' is clicked.
+function ruleButtonClicked() {
+
 //End of Rules variable.
 	var randomRule = [Math.floor(Math.random() * rules.length)];
 	var selectedRule = rules[randomRule];
@@ -29,5 +51,4 @@ function ruleButtonClicked() {
 	document.getElementById("rule-icon").innerHTML = '<img src="'+selectedRule.icon+'" style="height: 100px;"">';
 	document.getElementById("rule-title").innerHTML = selectedRule.name;
 	document.getElementById("rule-discription").innerHTML = selectedRule.discription;
-};
-};
+};*/
